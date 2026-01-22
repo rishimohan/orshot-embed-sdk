@@ -8,7 +8,7 @@ Official SDKs to freely embed Orshot Studio into your web application.
 
 ## Documentation
 
-Full documentation is available at [docs.orshot.com](https://orshot.com/docs/orshot-embed/introduction).
+Full documentation is available at [orshot.com/docs](https://orshot.com/docs/orshot-embed/introduction).
 
 ## Features
 
