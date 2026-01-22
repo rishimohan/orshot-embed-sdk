@@ -24,13 +24,13 @@ npm install @orshot/embed-react
 ```
 
 ```jsx
-import { OrshotEmbed } from '@orshot/embed-react';
+import { OrshotEmbed } from "@orshot/embed-react";
 
 function App() {
   return (
-    <OrshotEmbed 
+    <OrshotEmbed
       embedId="your-embed-id"
-      onTemplateCreate={(data) => console.log('Saved!', data)}
+      onTemplateCreate={(data) => console.log("Saved!", data)}
     />
   );
 }
