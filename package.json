@@ -2,6 +2,15 @@
   "name": "orshot-embed-sdks",
   "private": true,
   "description": "Monorepo for Orshot Embed SDKs",
+  "author": {
+    "name": "Orshot",
+    "url": "https://orshot.com"
+  },
+  "homepage": "https://orshot.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishimohan/orshot-embed-sdk"
+  },
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",

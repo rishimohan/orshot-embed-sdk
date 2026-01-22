@@ -15,7 +15,15 @@
     "embed",
     "sdk"
   ],
-  "author": "Orshot",
+  "author": {
+    "name": "Orshot",
+    "url": "https://orshot.com"
+  },
+  "homepage": "https://orshot.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishimohan/orshot-embed-sdk"
+  },
   "license": "MIT",
   "devDependencies": {
     "tsup": "^8.0.1",
