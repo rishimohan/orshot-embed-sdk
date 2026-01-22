@@ -2,39 +2,35 @@
   <div ref="container" :class="className" :style="containerStyle"></div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted, onBeforeUnmount, watch, computed } from "vue";
-import {
-  OrshotEmbed,
-  type OrshotEmbedOptions,
-  type EventMap,
-} from "@orshot/embed";
+import { OrshotEmbed, OrshotEmbedOptions, EventMap } from "@orshot/embed";
 
-const props = defineProps<{
-  embedId?: string;
-  templateId?: string | number;
-  modifications?: Record<string, any>;
-  width?: string | number;
-  height?: string | number;
-  className?: string;
-  style?: Record<string, any>;
-  url?: string;
-}>();
+const props = defineProps({
+  embedId: { type: String, required: false },
+  templateId: { type: [String, Number], required: false },
+  modifications: { type: Object, required: false },
+  width: { type: [String, Number], required: false },
+  height: { type: [String, Number], required: false },
+  className: { type: String, required: false },
+  style: { type: Object, required: false },
+  url: { type: String, required: false },
+});
 
-const emit = defineEmits<{
-  (e: "template:create", data: EventMap["template:create"]): void;
-  (e: "template:update", data: EventMap["template:update"]): void;
-  (e: "template:content", data: EventMap["template:content"]): void;
-  (e: "download:png", data: EventMap["download:png"]): void;
-  (e: "download:jpeg", data: EventMap["download:jpeg"]): void;
-  (e: "download:webp", data: EventMap["download:webp"]): void;
-  (e: "download:pdf", data: EventMap["download:pdf"]): void;
-  (e: "download:html", data: EventMap["download:html"]): void;
-  (e: "error", data: EventMap["error"]): void;
-}>();
+const emit = defineEmits([
+  "template:create",
+  "template:update",
+  "template:content",
+  "download:png",
+  "download:jpeg",
+  "download:webp",
+  "download:pdf",
+  "download:html",
+  "error",
+]);
 
-const container = ref<HTMLElement | null>(null);
-let embedInstance: OrshotEmbed | null = null;
+const container = ref(null);
+let embedInstance = null;
 
 const containerStyle = computed(() => ({
   width:
@@ -104,13 +100,10 @@ watch(
 
 // Expose methods to parent
 defineExpose({
-  setTemplate: (id: string | number) => embedInstance?.setTemplate(id),
-  setModifications: (mods: Record<string, any>) =>
-    embedInstance?.setModifications(mods),
-  requestContent: (
-    format: "png" | "pdf" | "html" = "png",
-    options: { scale?: number } = {},
-  ) => embedInstance?.requestContent(format, options),
-  send: (type: string, payload?: any) => embedInstance?.send(type, payload),
+  setTemplate: (id) => embedInstance?.setTemplate(id),
+  setModifications: (mods) => embedInstance?.setModifications(mods),
+  requestContent: (format = "png", options = {}) =>
+    embedInstance?.requestContent(format, options),
+  send: (type, payload) => embedInstance?.send(type, payload),
 });
 </script>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useImperativeHandle, forwardRef } from 'react';
 import { OrshotEmbed as CoreEmbed, OrshotEmbedOptions, EventMap, EventHandler } from '@orshot/embed';
 
-export interface OrshotEmbedProps extends OrshotEmbedOptions {
+export interface OrshotEmbedProps extends Omit<OrshotEmbedOptions, 'style'> {
   onTemplateCreate?: EventHandler<EventMap['template:create']>;
   onTemplateUpdate?: EventHandler<EventMap['template:update']>;
   onTemplateContent?: EventHandler<EventMap['template:content']>;
