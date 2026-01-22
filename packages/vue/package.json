@@ -27,6 +27,9 @@
   "dependencies": {
     "@orshot/embed": "workspace:*"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "vue": "^3.3.0",
     "vue-tsc": "^1.8.0",

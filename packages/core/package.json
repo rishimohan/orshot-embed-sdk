@@ -26,6 +26,9 @@
     "url": "https://github.com/rishimohan/orshot-embed-sdk"
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
