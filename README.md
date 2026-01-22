@@ -8,7 +8,7 @@ Official SDKs to freely embed Orshot Studio into your web application.
 
 ## Documentation
 
-Full documentation is available at [docs.orshot.com](https://docs.orshot.com/orshot-embed).
+Full documentation is available at [docs.orshot.com](https://orshot.com/docs/orshot-embed/introduction).
 
 ## Features
 
@@ -17,7 +17,11 @@ Full documentation is available at [docs.orshot.com](https://docs.orshot.com/ors
 - 🔌 **Plug & Play**: Simple drop-in component.
 - 🚀 **Scalable**: Built on a solid event-driven core.
 
-## Quick Start (React)
+## Quick Start
+
+### React
+
+Full documentation: [@orshot/embed-react](packages/react/README.md)
 
 ```bash
 npm install @orshot/embed-react
@@ -34,6 +38,27 @@ function App() {
     />
   );
 }
+```
+
+### Vue 3
+
+Full documentation: [@orshot/embed-vue](packages/vue/README.md)
+
+```bash
+npm install @orshot/embed-vue
+```
+
+```vue
+<script setup>
+import { OrshotEmbed } from "@orshot/embed-vue";
+</script>
+
+<template>
+  <OrshotEmbed
+    embedId="your-embed-id"
+    @template:create="(data) => console.log('Saved!', data)"
+  />
+</template>
 ```
 
 ## Contributing
