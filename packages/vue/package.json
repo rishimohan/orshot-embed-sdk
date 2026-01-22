@@ -1,0 +1,25 @@
+{
+  "name": "@orshot/embed-vue",
+  "version": "0.1.0",
+  "description": "Vue 3 SDK for Orshot Embed",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --external vue",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@orshot/embed": "workspace:*"
+  },
+  "devDependencies": {
+    "vue": "^3.3.0",
+    "vue-tsc": "^1.8.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}

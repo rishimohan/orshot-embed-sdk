@@ -1,0 +1,25 @@
+{
+  "name": "@orshot/embed-react",
+  "version": "0.1.0",
+  "description": "React SDK for Orshot Embed",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --external react",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "tsc"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "dependencies": {
+    "@orshot/embed": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
